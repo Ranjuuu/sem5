@@ -1,7 +1,30 @@
 form{
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-self: center;
     width: 400px;
+}
+.form-wrapper{
+    width:400px;
+    margin: auto;
 }
 input{
     width: 100% ;
     padding: 10px;
+}
+header{
+    font-size: 40px;
+}
+.form-group{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.submitBtn{
+   
+padding: 10px;
 }
