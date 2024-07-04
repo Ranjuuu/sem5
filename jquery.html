@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="./jquerymin.js"></script>
+</head>
+<style>
+    .description {
+        display:none;
+    }
+
+    .accordion{
+        background-color: black;
+        width: 200px;
+        color: aliceblue;
+    }
+</style>
+
+<body>
+
+    <form id="myform">
+        <h1>jquery practise</h1>
+        <input name="name" type="text" id="txt1">
+        <input name="email" type="text" id="txt2">
+
+        <button type="submit" id="btn1">click me</button>
+    </form>
+    <p id="p1"> this is a paragraph.</p>
+    <p> simple accordion</p>
+    <div class="accordion">
+        <div class="header">Title</div>
+        <div class="description">
+            this is the description for the accordion
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            //showing the according description
+            $('.header').click(function(){
+                //$('.description').slidedown()
+                $('.description').slideToggle()
+            })
+            $("#btn1").mouseenter(function () {
+                $("#p1").show();
+            });
+            $("#btn1").mouseleave(function () {
+                $("#p1").hide();
+            });
+            $("#txt1").keyup(function () {
+                $("#p1").text($(this).val());
+            });
+            $("#myform").submit(function () {
+                alert("form submit")
+            });
+        });
+    </script>
+</body>
+
+</html>
