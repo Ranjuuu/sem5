@@ -1,0 +1,28 @@
+<html>
+    <body>
+        <form id="myForm">
+            <div>
+                <label>Email</label>
+                <input type="text" placeholder="Name" name="email">
+            </div>
+            <div>
+                <label> Password</label>
+                <input type="password" placeholder="********" name="password">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+        <script>
+        $(document).ready(function(){
+            $('#myForm').submit(function(event) {
+        // Prevent default form submission  
+                event.preventDefault()
+                alert('form submitted');
+                var email=$('#email').val()
+                var password=$("#password").val()
+                alert(`Email : ${email},Password:${password}`)
+            })
+        })
+        </script>
+    </body>
+</html>

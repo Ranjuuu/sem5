@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Submission Example</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<form id="myForm">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div class="form-group">
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address">
+    </div>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="output">
+    <!-- Display submitted values here -->
+</div>
+
+<script>
+$(document).ready(function() {
+    $('#myForm').submit(function(event) {
+        // Prevent default form submission
+        event.preventDefault();
+
+        // Get form values
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var address = $('#address').val();
+
+        // Display values in output div
+        $('#output').html('<p>Email: ' + email + '</p>' +
+                          '<p>Password: ' + password + '</p>' +
+                          '<p>Address: ' + address + '</p>');
+    });
+});
+</script>
+
+</body>
+</html>
