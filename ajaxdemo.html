@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>
+            Ajax
+        </title>
+    </head>
+<body>
+    <p>the content below is from XMLHTTPReqeust</p>
+    <div id="content">
+        <!-- dynamic content -->
+    </div>
+    <p>this content is above XMLHTTPReqeust</p>
+    <button onclick="loadDoc()">change content</button>
+</body>
+<script>
+    function loadDoc(){
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+            if(this.readystate ==4 && this.status==200){
+                document.getElementById("content").innerHTML=this.responseText;
+            }    
+        };
+        xhttp.open("GET","http_info.txt",true);
+        xhttp.send();
+    }    
+</script>
+</html>
